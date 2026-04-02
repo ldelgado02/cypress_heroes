@@ -18,3 +18,6 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+// Import Allure Reports Plugin
+import '@shelex/cypress-allure-plugin';

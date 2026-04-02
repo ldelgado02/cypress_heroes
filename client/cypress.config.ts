@@ -1,5 +1,6 @@
 import { defineConfig } from "cypress";
 import { createHero, deleteHero } from './cypress/support/data';
+import allureWriter from '@shelex/cypress-allure-plugin/writer';
 
 export default defineConfig({
   projectId: 'nd8nd1',
@@ -10,6 +11,9 @@ export default defineConfig({
         createHero,
         deleteHero,
       });
+
+      allureWriter(on, config);
+      return config;
     },
   },
 
