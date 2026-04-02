@@ -1,58 +1,68 @@
-# Cypress Heroes Demo Application
+# Cypress Heroes Demo
 
-This is a demo application that shows how to use Cypress to run end-to-end,
-component, and API tests against an application.
+Este repositório é um projeto de demonstração que usa Cypress para executar testes end-to-end.
 
-## Getting Started
+## 🚀 Iniciando
 
-The app is a mono repo that uses npm workspaces. Once you clone the project,
-install the dependencies at the root folder:
+1. Clone o projeto.
+2. No diretório raiz do monorepo, execute:
 
 ```sh
 npm install
 ```
 
-After that a few more things need to be set up (databases and such), to do so run:
+3. Configure banco de dados e demais dependências:
 
 ```sh
 npm run setup
 ```
 
-
-To launch the app for development, run:
+4. Para iniciar em modo desenvolvimento:
 
 ```sh
 npm run dev
 ```
 
-This will start both the client and server apps in dev mode. The site will be
-available at http://localhost:3000.
+A aplicação ficará disponível em http://localhost:3000 (cliente) e o backend em http://localhost:3001.
 
-## App Overview
 
-The Cypress Heroes app consists of a frontend client app written in React that
-uses Vite, as well as a backend app that uses NestJS.
+## 🛠️ Comandos importantes
 
-### React Client App
+- `npm install` - instala as dependências do monorepo.
+- `npm run setup` - configura banco de dados e realiza seeding inicial.
+- `npm run dev` - executa frontend e backend em modo desenvolvimento.
+- `npm run resetdb` - reseta o banco de dados para o estado inicial (seed).
 
-The React client app is located in the **client** folder. It is a standard React [Vite](https://vitejs.dev/) app.
 
-Todo: fill out
+## 🧪 Testes com Cypress
 
-### NestJS Server App
-
-The server app is in the **server** folder. It is built with the [NestJS](https://nestjs.com/) Node.js framework. It uses [Prisma](https://www.prisma.io/) for the database ORM.
-
-#### Database seeding and resetting
-
-The database is seeded from the **server/prisma/seed.ts** script when you set up the app. If at any time you want to reset the database back to its initial state, run:
+Dentro da pasta client, rode o comando abaixo para realizar os testes.
 
 ```sh
-npm run resetdb
+npm run test:e2e
 ```
 
-## Environment Variables
 
-The client app uses an environment variable to know what the URL is for the
-backend api named `VITE_API_URL`. It defaults to "http://localhost:3001" for use
-in dev mode, and should be overriden in other environments/modes.
+## 📊 Relatórios com Allure
+
+Após executar os testes do Cypress, gere o relatório Allure:
+
+```sh
+npm run allure:report
+npm run allure:open
+```
+
+Após 'allure:open', o Allure será executado diretamente no seu navegador.
+
+### Exemplo de fluxo completo
+
+1. `npm run setup`
+2. `npm run dev`
+3. `npm run test:e2e`
+4. `npm run allure:report`
+5. `npm run allure:open`
+
+## 📝 Notas
+
+- Este README foi adaptado para o fluxo descrito nas instruções: `npm install`, `npm run setup`, `npm run dev`, e execução de testes com geração de relatório Allure.
+- Ajuste scripts conforme necessário para sua stack e convenções.
